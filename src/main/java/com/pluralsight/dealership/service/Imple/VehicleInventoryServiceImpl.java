@@ -43,12 +43,12 @@ public class VehicleInventoryServiceImpl implements VehicleInventory {
     }
 
     /**
-     * @param make make of vehicle
+     * @param make  make of vehicle
      * @param model model of vehicle
      * @return list of vehicles
      */
     @Override
-    public List<Vehicle> findByMakeAndModel(@NotNull(message = "Make cannot be null")String make, @NotNull(message = "Model cannot be null") String model) {
+    public List<Vehicle> findByMakeAndModel(@NotNull(message = "Make cannot be null") String make, @NotNull(message = "Model cannot be null") String model) {
         return vehicleRepository.findByMakeAndModel(make, model).orElse(null);
     }
 
@@ -58,7 +58,7 @@ public class VehicleInventoryServiceImpl implements VehicleInventory {
      * @return list of vehicles
      */
     @Override
-    public List<Vehicle> findByYearBetween( @Min(value = 1900, message = "Year must be greater than or equal to 1900") int min, @Max(value = 2024, message = "Year must be less than or equal to 2024") int max) {
+    public List<Vehicle> findByYearBetween(@Min(value = 1900, message = "Year must be greater than or equal to 1900") int min, @Max(value = 2024, message = "Year must be less than or equal to 2024") int max) {
         return vehicleRepository.findByYearBetween(min, max).orElse(null);
     }
 
@@ -109,7 +109,7 @@ public class VehicleInventoryServiceImpl implements VehicleInventory {
 
     /**
      * @param vehicle vehicle
-     * @param id id of vehicle
+     * @param id      id of vehicle
      * @return true if it updated successfully.
      */
     @Override
@@ -132,7 +132,7 @@ public class VehicleInventoryServiceImpl implements VehicleInventory {
     }
 
     /**
-     * @param id  vehicle id
+     * @param id vehicle id
      * @return Vehicle
      */
     @Override

@@ -1,14 +1,11 @@
 package com.pluralsight.dealership.utils;
 
-import com.pluralsight.dealership.facade.Dealership;
-import com.pluralsight.dealership.facade.VehicleInventory;
-import com.pluralsight.dealership.model.Cars.Car;
-import com.pluralsight.dealership.model.Cars.Vehicle;
+import com.pluralsight.dealership.Entity.Enum.ColorCodes;
+import com.pluralsight.dealership.version_One.Dealership;
+import com.pluralsight.dealership.version_One.VehicleInventory;
+import com.pluralsight.dealership.version_One.Car;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.List;
 
 public class DealershipFileManager {
@@ -18,7 +15,7 @@ public class DealershipFileManager {
 
     public static Dealership getDealerShip() {
         VehicleInventory vehicleInventory = new VehicleInventory();
-        List<Vehicle> vehicles = vehicleInventory.getAllVehicles();
+        List<Car> vehicles = vehicleInventory.getAllVehicles();
         Dealership dealership = null;
 
         try(BufferedReader bufferedReader = new BufferedReader(new FileReader(FILE_NAME))) {
@@ -41,8 +38,7 @@ public class DealershipFileManager {
                 private int odometer;
                 private double price;
                  */
-                if (data[0].equalsIgnoreCase(VehicleType.SUV.toString())) {
-                    Vehicle vehicle = new Car(
+                    Car vehicle = new Car(
                             Integer.parseInt(data[0]),
                             Integer.parseInt(data[1]),
                             data[2],
@@ -54,11 +50,10 @@ public class DealershipFileManager {
                     vehicles.add(vehicle);
 
                 }
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-
+            } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
         InputOutput.formatOutput("You have successfully read data from file:  " + FILE_NAME + "\nTotal of vehicles is: " + vehicles.size());
@@ -67,7 +62,7 @@ public class DealershipFileManager {
 
     public static void updateAndSaveDealership(Dealership dealership) {
 
-        List<Vehicle> allVehicles = dealership.getInventory().getAllVehicles();
+        List<Car> allVehicles = dealership.getInventory().getAllVehicles();
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(FILE_NAME))){
 
             bufferedWriter.write(new StringBuffer()
@@ -76,7 +71,7 @@ public class DealershipFileManager {
                     .append(dealership.getPhone()).toString()
             );
 
-            for (Vehicle vehicle: allVehicles) {
+            for (Car vehicle: allVehicles) {
                 /**
 
                  private int vin;

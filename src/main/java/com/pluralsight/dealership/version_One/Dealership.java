@@ -1,5 +1,13 @@
-package com.pluralsight.dealership.facade;
+package com.pluralsight.dealership.version_One;
 
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Dealership {
 
     private String name;
@@ -7,45 +15,4 @@ public class Dealership {
     private String phone;
     private VehicleInventory inventory;
 
-    public Dealership() {
-    }
-
-    public Dealership(String name, String address, String phone, VehicleInventory inventory) {
-        this.name = name;
-        Address = address;
-        this.phone = phone;
-        this.inventory = inventory;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddress() {
-        return Address;
-    }
-
-    public void setAddress(String address) {
-        Address = address;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public VehicleInventory getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(VehicleInventory inventory) {
-        this.inventory = inventory;
-    }
 }

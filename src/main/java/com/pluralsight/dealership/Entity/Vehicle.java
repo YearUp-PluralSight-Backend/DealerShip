@@ -1,7 +1,6 @@
 package com.pluralsight.dealership.Entity;
 
 
-
 import com.pluralsight.dealership.Entity.Enum.ColorCodes;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;

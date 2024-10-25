@@ -1,12 +1,23 @@
-package com.pluralsight.dealership.model.Cars;
+package com.pluralsight.dealership.version_One;
 
-import com.pluralsight.dealership.utils.ColorCodes;
+import com.pluralsight.dealership.Entity.Enum.ColorCodes;
 
-public class Car extends Vehicle {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+public class Car {
 
-    public Car(int vin, int year, String make, String model, String vehicleType, ColorCodes color, int odometer, double price) {
-        super(vin, year, make, model, vehicleType, color, odometer, price);
+    private int vin;
+    private int year;
+    private String make;
+    private String model;
+    private String vehicleType;
+    private ColorCodes color;
+    private int odometer;
+    private double price;
 
-    }
 }
