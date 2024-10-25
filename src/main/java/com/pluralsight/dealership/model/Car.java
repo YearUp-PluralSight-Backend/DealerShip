@@ -1,5 +1,7 @@
 package com.pluralsight.dealership.model;
 
+import com.pluralsight.dealership.model.Enum.ColorCodes;
+
 public class Car extends Vehicle{
 
 
@@ -21,7 +23,7 @@ public class Car extends Vehicle{
      * @param odometer    the odometer reading
      * @param price       the price of the vehicle
      */
-    public Car(int vin, int year, String make, String model, String vehicleType, String color, int odometer, double price) {
+    public Car(int vin, int year, String make, String model, String vehicleType, ColorCodes color, int odometer, double price) {
         super(vin, year, make, model, vehicleType, color, odometer, price);
     }
 }

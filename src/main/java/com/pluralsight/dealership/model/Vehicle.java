@@ -4,6 +4,8 @@ package com.pluralsight.dealership.model;
 //import com.pluralsight.dealership.utils.ColorCodes;
 //import com.pluralsight.dealership.utils.VehicleType;
 
+import com.pluralsight.dealership.model.Enum.ColorCodes;
+
 /**
  * Represents a vehicle with various attributes such as VIN, year, make, model, type, color, odometer, and price.
  */
@@ -14,7 +16,7 @@ public abstract class Vehicle {
     private String make;
     private String model;
     private String vehicleType;
-    private String color;
+    private ColorCodes color;
     private int odometer;
     private double price;
 
@@ -37,7 +39,7 @@ public abstract class Vehicle {
      * @param odometer the odometer reading
      * @param price the price of the vehicle
      */
-    public Vehicle(int vin, int year, String make, String model, String vehicleType, String color, int odometer, double price) {
+    public Vehicle(int vin, int year, String make, String model, String vehicleType, ColorCodes color, int odometer, double price) {
         this.vin = vin;
         this.year = year;
         this.make = make;
@@ -143,7 +145,7 @@ public abstract class Vehicle {
      *
      * @return the color of the vehicle
      */
-    public String getColor() {
+    public ColorCodes getColor() {
         return color;
     }
 
@@ -152,7 +154,7 @@ public abstract class Vehicle {
      *
      * @param color the color of the vehicle
      */
-    public void setColor(String color) {
+    public void setColor(ColorCodes color) {
         this.color = color;
     }
 
