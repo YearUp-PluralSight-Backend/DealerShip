@@ -1,4 +1,4 @@
-package com.pluralsight.dealership.model.Enum;
+package com.pluralsight.dealership.Entity.Enum;
 
 public enum ColorCodes {
 

@@ -1,10 +1,10 @@
-package com.pluralsight.dealership.model;
+package com.pluralsight.dealership.Entity;
 
 
 //import com.pluralsight.dealership.utils.ColorCodes;
 //import com.pluralsight.dealership.utils.VehicleType;
 
-import com.pluralsight.dealership.model.Enum.ColorCodes;
+import com.pluralsight.dealership.Entity.Enum.ColorCodes;
 
 /**
  * Represents a vehicle with various attributes such as VIN, year, make, model, type, color, odometer, and price.

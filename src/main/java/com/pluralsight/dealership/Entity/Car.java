@@ -1,6 +1,6 @@
-package com.pluralsight.dealership.model;
+package com.pluralsight.dealership.Entity;
 
-import com.pluralsight.dealership.model.Enum.ColorCodes;
+import com.pluralsight.dealership.Entity.Enum.ColorCodes;
 
 public class Car extends Vehicle{
 
