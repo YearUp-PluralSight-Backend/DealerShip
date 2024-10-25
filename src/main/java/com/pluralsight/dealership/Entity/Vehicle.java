@@ -46,7 +46,7 @@ public class Vehicle {
     private String vehicleType;
 
     @NotNull(message = "Color cannot be null")
-    private ColorCodes color;
+    private String color;
 
     @Min(value = 0, message = "Year odometer be greater than or equal to 0")
     @Max(value = 10000000, message = "Year odometer be less than or equal to 10000000")

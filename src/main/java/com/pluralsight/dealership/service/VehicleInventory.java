@@ -16,7 +16,7 @@ public interface VehicleInventory {
 
     List<Vehicle> findByYearBetween(int min, int max);
 
-    List<Vehicle> findByColor(ColorCodes color);
+    List<Vehicle> findByColor(String color);
 
     List<Vehicle> findByOdometerBetween(double min, double max);
 
@@ -29,5 +29,7 @@ public interface VehicleInventory {
     boolean UpdateVehicleByVin(Vehicle vehicle, int id);
 
     Vehicle findById(int Id);
+
+    boolean addAllVehicles(List<Vehicle> vehicleList);
 
 }

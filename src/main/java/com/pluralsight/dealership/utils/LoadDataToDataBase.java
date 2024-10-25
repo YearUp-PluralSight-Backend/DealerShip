@@ -40,7 +40,7 @@ public class LoadDataToDataBase {
                         data[2],
                         data[3],
                         data[4],
-                        ColorCodes.valueOf(data[5]),
+                        data[5],
                         Integer.parseInt(data[6]),
                         Double.parseDouble(data[7]));
                 vehicles.add(vehicle);

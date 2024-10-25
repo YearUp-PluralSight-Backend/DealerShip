@@ -4,6 +4,7 @@ import com.pluralsight.dealership.Entity.Enum.ColorCodes;
 import com.pluralsight.dealership.version_One.Dealership;
 import com.pluralsight.dealership.version_One.VehicleInventory;
 import com.pluralsight.dealership.version_One.Car;
+import lombok.Getter;
 
 import java.io.*;
 import java.util.List;
@@ -11,6 +12,27 @@ import java.util.List;
 public class DealershipFileManager {
 
     private static final String FILE_NAME = "inventory.csv";
+
+    @Getter
+    private static String dealershipName;
+
+    @Getter
+    private static String dealershipAddress;
+
+    @Getter
+    private static String dealershipPhoneNumber;
+
+    public static void getDealerShipInfo() {
+
+        try(BufferedReader bufferedReader = new BufferedReader(new FileReader(FILE_NAME))) {
+            String[] firstLineData = bufferedReader.readLine().trim().split("\\|");
+            firstLineData[0] = dealershipName;
+            firstLineData[1] = dealershipAddress;
+            firstLineData[2] = dealershipPhoneNumber;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
     public static Dealership getDealerShip() {
@@ -51,9 +73,9 @@ public class DealershipFileManager {
 
                 }
             } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
 
         InputOutput.formatOutput("You have successfully read data from file:  " + FILE_NAME + "\nTotal of vehicles is: " + vehicles.size());

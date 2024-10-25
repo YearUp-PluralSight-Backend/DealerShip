@@ -67,7 +67,7 @@ public class VehicleInventoryServiceImpl implements VehicleInventory {
      * @return list of vehicles
      */
     @Override
-    public List<Vehicle> findByColor(@NotNull(message = "ColorCodes cannot be null") ColorCodes color) {
+    public List<Vehicle> findByColor(@NotNull(message = "ColorCodes cannot be null") String color) {
         return vehicleRepository.findByColor(color).orElse(null);
     }
 
@@ -138,5 +138,15 @@ public class VehicleInventoryServiceImpl implements VehicleInventory {
     @Override
     public Vehicle findById(@Min(value = 1, message = "id cannot be 0 or negative") int id) {
         return vehicleRepository.findById(id).orElse(null);
+    }
+
+    /**
+     * @param vehicleList
+     * @return
+     */
+    @Override
+    public boolean addAllVehicles(List<Vehicle> vehicleList) {
+        List<Vehicle> vehicles = vehicleRepository.saveAll(vehicleList);
+        return true;
     }
 }

@@ -20,7 +20,7 @@ public interface VehicleRepository extends JpaRepository<Vehicle, Integer> {
 
     Optional<List<Vehicle>> findByYearBetween(int min, int max);
 
-    Optional<List<Vehicle>> findByColor(ColorCodes color);
+    Optional<List<Vehicle>> findByColor(String color);
 
     Optional<List<Vehicle>> findByOdometerBetween(double min, double max);
 

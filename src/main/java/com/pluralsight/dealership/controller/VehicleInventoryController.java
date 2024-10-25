@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/vehicles")
@@ -19,6 +20,12 @@ public class VehicleInventoryController {
 
     public VehicleInventoryController(VehicleInventory vehicleInventory) {
         this.vehicleInventory = vehicleInventory;
+    }
+
+    @GetMapping("/dealerName")
+    public ResponseEntity<String> getDealershipName() {
+
+        return ResponseEntity.of(Optional.of("dealership"));
     }
 
     @GetMapping
@@ -52,7 +59,7 @@ public class VehicleInventoryController {
     }
 
     @GetMapping("/color")
-    public ResponseEntity<List<Vehicle>> getVehiclesByColor(@RequestParam ColorCodes color) {
+    public ResponseEntity<List<Vehicle>> getVehiclesByColor(@RequestParam String color) {
         List<Vehicle> vehicles = vehicleInventory.findByColor(color);
         return ResponseEntity.ok(vehicles);
     }
