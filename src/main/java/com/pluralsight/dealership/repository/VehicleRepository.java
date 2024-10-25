@@ -8,9 +8,11 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
+//https://docs.spring.io/spring-data/jpa/reference/jpa.html
 
 @Repository
 public interface VehicleRepository extends JpaRepository<Vehicle, Integer> {
+
 
     Optional<List<Vehicle>> findByPriceBetween(double min, double max);
 

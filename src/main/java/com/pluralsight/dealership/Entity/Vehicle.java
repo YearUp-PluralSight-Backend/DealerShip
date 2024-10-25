@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 /**
  * Represents a vehicle with various attributes such as VIN, year, make, model, type, color, odometer, and price.
  */
+// https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#section-constraint-violation-methods
 
 @Entity
 @Data

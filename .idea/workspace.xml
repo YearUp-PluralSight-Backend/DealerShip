@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5cc4c3d-ce72-4666-a5ba-0163127f1438" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/dealership/Entity/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/dealership/Entity/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/dealership/service/Imple/VehicleInventoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/dealership/service/Imple/VehicleInventoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/dealership/service/VehicleInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/dealership/service/VehicleInventory.java" afterDir="false" />
-    </list>
+    <list default="true" id="a5cc4c3d-ce72-4666-a5ba-0163127f1438" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,17 +21,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Yiming0576"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Yiming0576&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/YearUp-PluralSight-Backend/DealerShip.git",
-    "accountId": "c749d637-857a-4ae1-8eb0-ae48e30e7982"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/YearUp-PluralSight-Backend/DealerShip.git&quot;,
+    &quot;accountId&quot;: &quot;c749d637-857a-4ae1-8eb0-ae48e30e7982&quot;
   }
+}</component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
 }]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -46,9 +44,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2nvs3a7jguttxZX7ypTGeAjm52M" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -61,25 +59,41 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "OverrideImplement.generate.javadoc": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.DealerShipApplication.executor": "Run",
     "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/yiminggao/Documents/year_up/backend_java_development/week_five/workbook-5/DealerShip/src/main/java/com/pluralsight/dealershipWithCSV/src/main/java/com/pluralsight/Main.java",
     "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.pluralsight.dealership.utils" />
       <recent name="com.pluralsight.dealership.repository.Imple" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="DealerShipApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="DealerShipApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="DealerShip" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.pluralsight.dealership.DealerShipApplication" />
@@ -105,7 +119,8 @@
       <option name="presentableId" value="Default" />
       <updated>1725321984670</updated>
       <workItem from="1725321985682" duration="347000" />
-      <workItem from="1729864687165" duration="7139000" />
+      <workItem from="1729864687165" duration="7675000" />
+      <workItem from="1729872400546" duration="2514000" />
     </task>
     <servers />
   </component>
@@ -114,6 +129,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pluralsight/dealershipWithCSV/src/main/java/com/pluralsight/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

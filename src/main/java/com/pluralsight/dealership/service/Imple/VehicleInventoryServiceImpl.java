@@ -25,6 +25,14 @@ public class VehicleInventoryServiceImpl implements VehicleInventory {
     }
 
     /**
+     * @return vehicles
+     */
+    @Override
+    public List<Vehicle> findAll() {
+        return vehicleRepository.findAll();
+    }
+
+    /**
      * @param min start price
      * @param max end price
      * @return list of vehicles

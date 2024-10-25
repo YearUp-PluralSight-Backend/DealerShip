@@ -7,6 +7,9 @@ import java.util.List;
 
 public interface VehicleInventory {
 
+
+    List<Vehicle> findAll();
+
     List<Vehicle> findByPriceBetween(double min, double max);
 
     List<Vehicle> findByMakeAndModel(String make, String model);
