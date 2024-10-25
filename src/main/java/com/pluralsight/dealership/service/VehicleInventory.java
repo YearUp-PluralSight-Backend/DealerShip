@@ -19,6 +19,12 @@ public interface VehicleInventory {
 
     List<Vehicle> findByVehicleType(String vehicleType);
 
+    Vehicle addVehicle(Vehicle vehicle);
 
+    void removeVehicleByVin(int id);
+
+    boolean UpdateVehicleByVin(Vehicle vehicle, int id);
+
+    Vehicle findById(int Id);
 
 }

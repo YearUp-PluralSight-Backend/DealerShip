@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5cc4c3d-ce72-4666-a5ba-0163127f1438" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/dealership/service/Imple/VehicleInventoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/dealership/Entity/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/dealership/Entity/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/dealership/Entity/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/dealership/repository/Imple/VehicleRepositoryImple.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/dealership/repository/VehicleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/dealership/repository/VehicleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/dealership/service/Imple/VehicleInventoryServiceImple.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/dealership/service/Imple/VehicleInventoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/dealership/service/Imple/VehicleInventoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/dealership/service/VehicleInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/dealership/service/VehicleInventory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1725321984670</updated>
       <workItem from="1725321985682" duration="347000" />
-      <workItem from="1729864687165" duration="3666000" />
+      <workItem from="1729864687165" duration="7139000" />
     </task>
     <servers />
   </component>
