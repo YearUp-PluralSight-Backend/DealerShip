@@ -10,6 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebMvc
 public class WebConfig {
 
+    // https://stackoverflow.com/questions/35091524/spring-cors-no-access-control-allow-origin-header-is-present
     // Configure CORS for React frontend at http://localhost:5173
     @Bean
     public WebMvcConfigurer corsConfigurer() {

@@ -149,4 +149,12 @@ public class VehicleInventoryServiceImpl implements VehicleInventory {
         List<Vehicle> vehicles = vehicleRepository.saveAll(vehicleList);
         return true;
     }
+
+    /**
+     *
+     */
+    @Override
+    public void removeAllVehicles() {
+        vehicleRepository.deleteAll();
+    }
 }

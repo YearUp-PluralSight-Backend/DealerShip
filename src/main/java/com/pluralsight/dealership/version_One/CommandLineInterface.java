@@ -2,12 +2,15 @@ package com.pluralsight.dealership.version_One;
 
 
 import com.pluralsight.dealership.utils.InputOutput;
+import lombok.Getter;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import static com.pluralsight.dealership.utils.InputOutput.*;
 
 public class CommandLineInterface {
 
+    @Getter
     private static Dealership dealership;
     private static CommandLineInterface commandLineInterface;
     private static  VehicleInventory carInventory;
@@ -36,7 +39,7 @@ public class CommandLineInterface {
         while (flag) {
             try {
                 printMenu();  // Display the car dealership menu
-                String command = InputOutput.promptForString(" (Dealership) Enter your Option: ").toUpperCase();
+                String command = promptForString(" (Dealership) Enter your Option: ").toUpperCase();
                 switch (command) {
                     case "1" -> display();                         // Display all vehicles
                     case "2" -> processGetByPrice();        // Search by price range
@@ -48,6 +51,8 @@ public class CommandLineInterface {
                     case "8" -> processGetAllVehicle();    // Display all vehicles
                     case "9" -> processAddVehicle();        // Add a new vehicle
                     case "10" -> processRemoveVehicle();     // Remove a vehicle
+                    case "11" -> processRemoveVehicleById();     // Remove a vehicle
+
                     case "0" -> flag = false;                      // Exit the application
                     default -> System.out.println("Invalid Option. Please choose a number between 0 and 10.\n");
                 }
@@ -83,98 +88,114 @@ public class CommandLineInterface {
 
 
     private void display() {
-        InputOutput.loadingAnimation();
-        InputOutput.header();
+        loadingAnimation();
+        header();
         carList.forEach(System.out::println);
-        InputOutput.footer(carList);
-        InputOutput.printEndingPrompt();
+        footer(carList);
+        printEndingPrompt();
     }
 
     public void processGetByPrice(){
-        Double min = InputOutput.promptForDouble("Enter the min price: ");
-        Double max = InputOutput.promptForDouble("Enter the max price: ");
-        InputOutput.loadingAnimation();
-        InputOutput.header();
+        Double min = promptForDouble("Enter the min price: ");
+        Double max = promptForDouble("Enter the max price: ");
+        loadingAnimation();
+        header();
         carInventory.getVehiclesByPrice(min, max).forEach(System.out::println);
-        InputOutput.footer(carList);
-        InputOutput.printEndingPrompt();
+        footer(carList);
+        printEndingPrompt();
 
     }
     public void processGetByMakeModel(){
-        String make = InputOutput.promptForString("Enter the Make: ");
-        String model = InputOutput.promptForString("Enter the Model: ");
-        InputOutput.loadingAnimation();
-        InputOutput.header();
-        carInventory.getVehiclesByMakeModel(make,model);
-        InputOutput.footer(carList);
-        InputOutput.printEndingPrompt();
+        String make = promptForString("Enter the Make: ");
+        String model = promptForString("Enter the Model: ");
+        loadingAnimation();
+        header();
+        carInventory.getVehiclesByMakeModel(make,model).forEach(System.out::println);
+        footer(carList);
+        printEndingPrompt();
     }
 
     public void processGetByYear(){
-        int startYear = InputOutput.promptForInteger("Enter the start year: ");
-        int endYear = InputOutput.promptForInteger("Enter the end year: ");
-        InputOutput.loadingAnimation();
-        InputOutput.header();
+        int startYear = promptForInteger("Enter the start year: ");
+        int endYear = promptForInteger("Enter the end year: ");
+        loadingAnimation();
+        header();
         carInventory.getVehiclesByYear(startYear, endYear).forEach(System.out::println);
-        InputOutput.footer(carList);
-        InputOutput.printEndingPrompt();
+        footer(carList);
+        printEndingPrompt();
     }
 
     public void processGetByColor(){
-        String color = InputOutput.promptForString("Enter the color: ");
-        InputOutput.loadingAnimation();
-        InputOutput.header();
+        String color = promptForString("Enter the color: ");
+        loadingAnimation();
+        header();
         carInventory.getVehiclesByColor(color).forEach(System.out::println);
-        InputOutput.footer(carList);
+        footer(carList);
 
-        InputOutput.printEndingPrompt();
+        printEndingPrompt();
 
     }
 
     public void processGetByMileage(){
-        double min = InputOutput.promptForDouble("Enter the min mileage: ");
-        double max = InputOutput.promptForDouble("Enter the max mileage: ");
-        InputOutput.loadingAnimation();
-        InputOutput.header();
+        double min = promptForDouble("Enter the min mileage: ");
+        double max = promptForDouble("Enter the max mileage: ");
+        loadingAnimation();
+        header();
         carInventory.getVehiclesByMileage(min, max).forEach(System.out::println);
-        InputOutput.footer(carList);
-        InputOutput.printEndingPrompt();
+        footer(carList);
+        printEndingPrompt();
     }
 
     public void processGetByVehicleType(){
-        String vehicleType = InputOutput.promptForString("Enter the vehicle type: ");
-        InputOutput.loadingAnimation();
-        InputOutput.header();
+        String vehicleType = promptForString("Enter the vehicle type: ");
+        loadingAnimation();
+        header();
         carInventory.getVehiclesByType(vehicleType).forEach(System.out::println);
-        InputOutput.footer(carList);
-        InputOutput.printEndingPrompt();
+        footer(carList);
+        printEndingPrompt();
     }
 
     public void processGetAllVehicle(){
-        InputOutput.loadingAnimation();
-        InputOutput.header();
+        loadingAnimation();
+        header();
         carList.forEach(System.out::println);
-        InputOutput.footer(carList);
-        InputOutput.printEndingPrompt();
+        footer(carList);
+        printEndingPrompt();
     }
 
     public void processAddVehicle(){
-        InputOutput.loadingAnimation();
-        Car car = InputOutput.carObject();
+        loadingAnimation();
+        Car car = carObject();
         carList.add(car);
-        InputOutput.printEndingPrompt();
+        printEndingPrompt();
 
     }
 
     public void processRemoveVehicle(){
-        InputOutput.loadingAnimation();
-        Car car = InputOutput.carObject();
-        carList.remove(car);
-        InputOutput.printEndingPrompt();
+        loadingAnimation();
+        Car car = carObject();
+        boolean removeVehicle = carInventory.removeVehicle(car);
+
+        if (!removeVehicle) {
+            formatOutput("Your data is not correct!");
+        }
+        formatOutput("You have removed vehicle successfully!");
+        printEndingPrompt();
+
+    }
+
+    private void processRemoveVehicleById() {
+        loadingAnimation();
+        int vin = promptForInteger("Enter the vin number: ");
+        Car car = carInventory.removeVehicleById(vin);
+        if (car != null) {
+            formatOutput("Your vin number is not correct!");
+        }
+        formatOutput("You have removed vehicle successfully!");
+        printEndingPrompt();
 
 
     }
 
 
-    
 }

@@ -42,7 +42,8 @@ public class VehicleInventory {
     public List<Car> getVehiclesByColor(String color) {
         // Implementation here
         return inventory.stream()
-                .filter(vehicle -> vehicle.getColor().equals(color)).toList();
+                .filter(vehicle -> vehicle.getColor().equalsIgnoreCase(color))
+                .toList();
     }
 
     // Method to get vehicles by mileage range
@@ -57,7 +58,7 @@ public class VehicleInventory {
     public List<Car> getVehiclesByType(String vehicleType) {
         // Implementation here
         return inventory.stream()
-                .filter(vehicle -> vehicle.getVehicleType().equals(vehicleType))
+                .filter(vehicle -> vehicle.getVehicleType().equalsIgnoreCase(vehicleType))
                 .toList();
     }
 
@@ -71,6 +72,7 @@ public class VehicleInventory {
     public void addVehicle(Car vehicle) {
         // Implementation here
         inventory.add(vehicle);
+        DealershipFileManager.updateAndSaveDealership(CommandLineInterface.getDealership());
         totalOfVehicles++;
     }
 
@@ -78,10 +80,20 @@ public class VehicleInventory {
     public boolean removeVehicle(Car vehicle) {
         // Implementation here
         totalOfVehicles--;
+        DealershipFileManager.updateAndSaveDealership(CommandLineInterface.getDealership());
         return inventory.remove(vehicle);
+    }
+
+    public Car removeVehicleById(int vin) {
+        // Implementation here
+        totalOfVehicles--;
+        DealershipFileManager.updateAndSaveDealership(CommandLineInterface.getDealership());
+        return inventory.remove(vin);
     }
 
     public void setTotalOfVehicles() {
         this.totalOfVehicles = inventory.size();
     }
+
+
 }

@@ -32,4 +32,6 @@ public interface VehicleInventory {
 
     boolean addAllVehicles(List<Vehicle> vehicleList);
 
+    void removeAllVehicles();
+
 }

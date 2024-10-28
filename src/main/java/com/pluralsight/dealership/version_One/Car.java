@@ -24,7 +24,7 @@ public class Car {
     @Override
     public String toString() {
         return String.format(
-                "%-10d %-6d %-15s %-15s %-12s %-10s %,15d $%,10.2f",
+                "%-10d %-6d %-15s %-15s %-12s %-10s %,10d $%,15.2f",
                 vin, year, make, model, vehicleType, color, odometer, price
         );
 }

@@ -103,5 +103,11 @@ public class VehicleInventoryController {
         Vehicle vehicle = vehicleInventory.findById(id);
         return vehicle != null ? ResponseEntity.ok(vehicle) : ResponseEntity.notFound().build();
     }
+
+    @GetMapping("/delete")
+    public ResponseEntity<Boolean> deleteAllVehicles() {
+        vehicleInventory.removeAllVehicles();
+        return ResponseEntity.of(Optional.of(true));
+    }
 }
 
