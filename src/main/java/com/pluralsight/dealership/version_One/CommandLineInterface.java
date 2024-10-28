@@ -39,15 +39,15 @@ public class CommandLineInterface {
                 String command = InputOutput.promptForString(" (Dealership) Enter your Option: ").toUpperCase();
                 switch (command) {
                     case "1" -> display();                         // Display all vehicles
-                    case "2" -> processGetByPriceRequest();        // Search by price range
-                    case "3" -> processGetByMakeModelRequest();    // Search by make and model
-                    case "4" -> processGetByYearRequest();         // Search by year
-                    case "5" -> processGetByColorRequest();        // Search by color
-                    case "6" -> processGetByMileageRequest();      // Search by mileage
-                    case "7" -> processGetByVehicleTypeRequest();  // Search by vehicle type
-                    case "8" -> processGetAllVehicleRequest();    // Display all vehicles
-                    case "9" -> processAddVehicleRequest();        // Add a new vehicle
-                    case "10" -> processRemoveVehicleRequest();     // Remove a vehicle
+                    case "2" -> processGetByPrice();        // Search by price range
+                    case "3" -> processGetByMakeModel();    // Search by make and model
+                    case "4" -> processGetByYear();         // Search by year
+                    case "5" -> processGetByColor();        // Search by color
+                    case "6" -> processGetByMileage();      // Search by mileage
+                    case "7" -> processGetByVehicleType();  // Search by vehicle type
+                    case "8" -> processGetAllVehicle();    // Display all vehicles
+                    case "9" -> processAddVehicle();        // Add a new vehicle
+                    case "10" -> processRemoveVehicle();     // Remove a vehicle
                     case "0" -> flag = false;                      // Exit the application
                     default -> System.out.println("Invalid Option. Please choose a number between 0 and 10.\n");
                 }
@@ -90,7 +90,7 @@ public class CommandLineInterface {
         InputOutput.printEndingPrompt();
     }
 
-    public void processGetByPriceRequest(){
+    public void processGetByPrice(){
         Double min = InputOutput.promptForDouble("Enter the min price: ");
         Double max = InputOutput.promptForDouble("Enter the max price: ");
         InputOutput.loadingAnimation();
@@ -100,7 +100,7 @@ public class CommandLineInterface {
         InputOutput.printEndingPrompt();
 
     }
-    public void processGetByMakeModelRequest(){
+    public void processGetByMakeModel(){
         String make = InputOutput.promptForString("Enter the Make: ");
         String model = InputOutput.promptForString("Enter the Model: ");
         InputOutput.loadingAnimation();
@@ -110,7 +110,7 @@ public class CommandLineInterface {
         InputOutput.printEndingPrompt();
     }
 
-    public void processGetByYearRequest(){
+    public void processGetByYear(){
         int startYear = InputOutput.promptForInteger("Enter the start year: ");
         int endYear = InputOutput.promptForInteger("Enter the end year: ");
         InputOutput.loadingAnimation();
@@ -120,7 +120,7 @@ public class CommandLineInterface {
         InputOutput.printEndingPrompt();
     }
 
-    public void processGetByColorRequest(){
+    public void processGetByColor(){
         String color = InputOutput.promptForString("Enter the color: ");
         InputOutput.loadingAnimation();
         InputOutput.header();
@@ -131,7 +131,7 @@ public class CommandLineInterface {
 
     }
 
-    public void processGetByMileageRequest(){
+    public void processGetByMileage(){
         double min = InputOutput.promptForDouble("Enter the min mileage: ");
         double max = InputOutput.promptForDouble("Enter the max mileage: ");
         InputOutput.loadingAnimation();
@@ -141,7 +141,7 @@ public class CommandLineInterface {
         InputOutput.printEndingPrompt();
     }
 
-    public void processGetByVehicleTypeRequest(){
+    public void processGetByVehicleType(){
         String vehicleType = InputOutput.promptForString("Enter the vehicle type: ");
         InputOutput.loadingAnimation();
         InputOutput.header();
@@ -150,7 +150,7 @@ public class CommandLineInterface {
         InputOutput.printEndingPrompt();
     }
 
-    public void processGetAllVehicleRequest(){
+    public void processGetAllVehicle(){
         InputOutput.loadingAnimation();
         InputOutput.header();
         carList.forEach(System.out::println);
@@ -158,7 +158,7 @@ public class CommandLineInterface {
         InputOutput.printEndingPrompt();
     }
 
-    public void processAddVehicleRequest(){
+    public void processAddVehicle(){
         InputOutput.loadingAnimation();
         Car car = InputOutput.carObject();
         carList.add(car);
@@ -166,7 +166,7 @@ public class CommandLineInterface {
 
     }
 
-    public void processRemoveVehicleRequest(){
+    public void processRemoveVehicle(){
         InputOutput.loadingAnimation();
         Car car = InputOutput.carObject();
         carList.remove(car);
