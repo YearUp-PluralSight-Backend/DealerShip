@@ -16,8 +16,18 @@ public class Car {
     private String make;
     private String model;
     private String vehicleType;
-    private ColorCodes color;
+    private String color;
     private int odometer;
     private double price;
+
+
+    @Override
+    public String toString() {
+        return String.format(
+                "%-10d %-6d %-15s %-15s %-12s %-10s %,15d $%,10.2f",
+                vin, year, make, model, vehicleType, color, odometer, price
+        );
+}
+
 
 }

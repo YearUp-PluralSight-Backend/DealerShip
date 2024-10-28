@@ -64,7 +64,7 @@ public class DealershipFileManager {
                             data[2],
                             data[3],
                             data[4],
-                            ColorCodes.valueOf(data[5]),
+                            data[5],
                             Integer.parseInt(data[6]),
                             Double.parseDouble(data[7]));
                     vehicles.add(vehicle);
@@ -77,6 +77,7 @@ public class DealershipFileManager {
         }
 
         InputOutput.formatOutput("You have successfully read data from file:  " + FILE_NAME + "\nTotal of vehicles is: " + vehicles.size());
+        vehicles.forEach(System.out::println);
         return dealership;
     }
 

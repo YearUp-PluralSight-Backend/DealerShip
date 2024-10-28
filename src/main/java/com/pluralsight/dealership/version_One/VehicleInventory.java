@@ -39,7 +39,7 @@ public class VehicleInventory {
     }
 
     // Method to get vehicles by color
-    public List<Car> getVehiclesByColor(ColorCodes color) {
+    public List<Car> getVehiclesByColor(String color) {
         // Implementation here
         return inventory.stream()
                 .filter(vehicle -> vehicle.getColor().equals(color)).toList();

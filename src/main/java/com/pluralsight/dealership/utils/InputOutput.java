@@ -1,5 +1,8 @@
 package com.pluralsight.dealership.utils;
 
+import com.pluralsight.dealership.version_One.Car;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class InputOutput {
@@ -21,7 +24,7 @@ public class InputOutput {
     }
 
     public static String promptForString(String prompt) {
-        System.out.println(prompt);
+        System.out.print(prompt);
         return promptForString();
     }
 
@@ -47,14 +50,8 @@ public class InputOutput {
      * @return The input value
      */
     public static int promptForInteger(String prompt) {
-        System.out.println(prompt);
-        int value = 0;
-        try {
-            value = Integer.parseInt(scanner.nextLine().trim());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return value;
+        System.out.print(prompt);
+        return promptForInteger();
     }
 
     /**
@@ -119,7 +116,53 @@ public class InputOutput {
 
 
 
+    public static void printEndingPrompt() {
+
+        formatOutput("Type enter/return to exit");
+        scanner.nextLine();
+    }
 
 
+    public static void loadingAnimation() {
 
+        try {
+            System.out.print("Loading.");
+            System.out.print(".");
+            Thread.sleep(1000);
+            System.out.print(".");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println();
+    }
+
+
+    public static Car carObject() {
+        int vin = promptForInteger("Enter Vehicle Identification Number (VIN): ");
+        int year = promptForInteger("Enter the manufacturing year: ");
+        String make = promptForString("Enter the make: ");
+        String model = promptForString("Enter the model: ");
+        String vehicleType = promptForString("Enter the vehicle type (e.g., sedan, SUV): ");
+        String color = promptForString("Enter the color: ");
+        int odometer = promptForInteger("Enter the odometer reading: ");
+        double price = promptForDouble("Enter the price: ");
+
+        return new Car(vin, year, make, model, vehicleType, color, odometer, price);
+    }
+
+    public static void header() {
+        System.out.println();
+        System.out.printf("%-10s %-6s %-15s %-15s %-12s %-10s %-15s %-10s%n",
+                "VIN", "Year", "Make", "Model", "Type", "Color", "Odometer", "Price");
+        System.out.println("----------------------------------------------------------------------------------------------------");
+
+    }
+
+
+    public static void footer(List<Car> carList) {
+        double totalValue = carList.stream().mapToDouble(Car::getPrice).sum();
+        System.out.println("----------------------------------------------------------------------------------------------------");
+        System.out.printf("Total Cars: %-10d Total Inventory Value: $%,.2f%n", carList.size(), totalValue);
+
+    }
 }
